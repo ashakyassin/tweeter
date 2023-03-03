@@ -4,17 +4,7 @@ aside {
   height: 400px;
 }
 
-/* Tablet and mobile layout*/
-@media only screen and (max-width: 1025px) {
-  aside {
-    width: 100%;
-  }
 
-  .container {
-    margin: 0 auto;
-    width: 90%;
-  }
-}
 /*Desktop layout*/
 @media only screen and (min-width: 1025px) {
   aside {
@@ -55,6 +45,19 @@ aside {
     transform: translate(-50%, -50%);
   }
 }
+
+/* Tablet and mobile layout*/
+@media only screen and (max-width: 1025px) {
+  aside {
+    width: 100%;
+  }
+
+  .container {
+    margin: 0 auto;
+    width: 90%;
+  }
+}
+
 .profile__name {
   text-align: center;
   width: 100%;
