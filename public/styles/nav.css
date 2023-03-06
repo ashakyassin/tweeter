@@ -1,26 +1,75 @@
 nav {
-    height: 120px;
-    width: 100vw;
-    background-color: #4056A1;
-    color: #FFFFFF;
-    padding-left: 1.5em;
-    padding-right: 1.5em;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  position: fixed;
+  height: 100px;
+  background-color: #4056A1;
+  color: #fff;
+  width: 100vw;
+  padding: 1.5em 1.5em;
+  display: flex;
+  align-items: center;
+  top: 0;
+  left: 0;
+  z-index: 9997;
+}
+
+.logo {
+  font-family: "Bungee", sans-serif;
+  float: left;
+  margin-left: 10px;
+  font-size: 1.5em;
+  color: #fff;
+}
+
+.nav-right {
+  font-family: "Source Sans Pro", sans-serif;
+  display: block;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.nav__text {
+  position: fixed;
+  top: 1.5em;
+  right: 2.5em;
+  cursor: pointer;
+  color: #fff;
+  float: right;
+  text-decoration: none;
+}
+
+.navText--borderless {
+  text-align: center;
+  cursor: pointer;
+  font-size: 22px;
+  line-height: 20px;
+  font-weight: 300;
+}
+
+.btn__icon {
+  font-size: 1em;
+  color: #f13c20;
+  margin-top: 0.2em;
+  animation: float 2s infinite ease;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
   }
-  
-  .headerLogo {
-    font-family: 'Bungee', cursive;
-    font-size: 40px;
+  50% {
+    transform: translateY(0.5rem);
+    -webkit-transform: translateY(0.5rem);
   }
-  
-  .headerWrite {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  100% {
+    transform: translateY(0);
+    -webkit-transform: translateY(0);
   }
-  
-  .fa-angle-double-down {
-    color: red;
-  } 
+}
+@media only screen and (max-width: 1025px) {
+  nav {
+    background: none;
+  }
+}

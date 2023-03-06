@@ -6,30 +6,78 @@
 
     <!-- External CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" type="text/css" />
+   
+    
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bungee&family=Source+Sans+Pro:ital,wght@0,300;0,600;1,300;1,600&display=swap" rel="stylesheet">  
     <!-- App CSS -->
-    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/nav.css" type="text/css" /> 
+    
+    <link rel ="stylesheet" href ="styles/layout.css" type="text/css"/>
+    <link rel="stylesheet" href="styles/nav.css" type="text/css"/>
+    <link rel="stylesheet" href="styles/header.css" type="text/css"/>
+    <link rel="stylesheet" href="styles/new-tweet.css" type="text/css"/>
+    <link rel="stylesheet" href="styles/tweets.css" type="text/css"/>
+    <link rel="stylesheet" href="styles/formValidation.css" type="text/css"/>
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
+    <script src="https://kit.fontawesome.com/5671d169c2.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"></script>
     <!-- App JS -->
     <script type="text/javascript" src="/scripts/client.js"></script>
+    <script src="/scripts/composer-char-counter.js" type="text/javascript"></script>
+   
   </head>
 
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span class="headerLogo">tweeter</span>
-      <div class="headerWrite">
-        <span><strong>Write </strong> a new tweet</span>
-        <i class="fas fa-angle-double-down"></i>
-      </div> 
-    </nav>
-
+      <span class="logo">tweeter</span>
+        <div class ="nav-right">
+        <a href="#top" class="nav__text navText--borderless" title="Create a Tweet">
+          <span class="bold">Write</span> a new tweet
+          <br/>
+          <i class="btn__icon fas fa-angle-double-down"></i>
+        </a>
+     </div>
+     </nav>
+    <!-- User Profile-->
+    <aside>
+        <div class="profile">
+         <img class="profile__image" src="images/profile-hex.png"/>
+        </div>
+        <br>
+        <div class="profile__name">
+          <h2><span class="profile--bold">Amy</span>  Mansell</h2>
+        </div>
+    </aside>
     <!-- Page-specific (main) content here -->
-    <main class="container"></main>
+    <main class="container">
+      <!-- Error container for validation error messages -->
+      <section class="error-container" id="newtweet__maxerror"><i class="fas fa-exclamation-triangle"></i>
+      <span>Too long, Please respect our arbitrary limit of 140 characters.</span>
+         <i class="fas fa-exclamation-triangle"></i>
+      </section>
+      <section class="error-container" id="newtweet__empty"><i class="fas fa-exclamation-triangle"></i>
+        <span>Please enter data before clicking Tweet button.</span> <i class="fas fa-exclamation-triangle"></i>
+      </section>
+      <section class="new-tweet">
+        <h2 style="margin-top: 50px;"></h2>
+        
+        <!-- form submission-->
+        <form name="newtweet__form" id="formTweet" action="./tweets" method="POST" Content-Type="application/x-www-form-urlencoded">
+          <textarea name="text" class="form__textarea" id="form__textarea" placeholder="What are you humming about?"></textarea>
+          <div>
+            <input type="submit" value="Tweet" id="btnSubmit" class="form__input">
+            <span class="form__counter" id="form__counter">140</span>
+          </div>
+        </form>
+      </section>
+      <!-- tweeter list-->
+      <section id="tweets-container">
+      </section>
+  </main>
+  
   </body>
 </html>
